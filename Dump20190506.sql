@@ -30,7 +30,7 @@ CREATE TABLE `extra_gear` (
   `description` varchar(255) COLLATE utf8_bin NOT NULL,
   `piclink` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`idextra_gear`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `extra_gear` (
 
 LOCK TABLES `extra_gear` WRITE;
 /*!40000 ALTER TABLE `extra_gear` DISABLE KEYS */;
+INSERT INTO `extra_gear` VALUES (1,10,'vsgjc','jskgdfugril'),(2,15,'vsgxxjc','jskgdfccugril'),(3,13,'vsgjc','jskgdfugril');
 /*!40000 ALTER TABLE `extra_gear` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,10 +104,7 @@ DROP TABLE IF EXISTS `session_gear`;
 CREATE TABLE `session_gear` (
   `fk_gear_id` int(11) NOT NULL,
   `fk_session_id` int(11) NOT NULL,
-  PRIMARY KEY (`fk_gear_id`,`fk_session_id`),
-  KEY `fk_session_idx` (`fk_session_id`),
-  CONSTRAINT `fk_extragear` FOREIGN KEY (`fk_gear_id`) REFERENCES `extra_gear` (`idextra_gear`),
-  CONSTRAINT `fk_session` FOREIGN KEY (`fk_session_id`) REFERENCES `studio_sessions` (`id`)
+  PRIMARY KEY (`fk_gear_id`,`fk_session_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -127,14 +125,14 @@ DROP TABLE IF EXISTS `studio_sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `studio_sessions` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_user_id` int(11) NOT NULL,
   `date` datetime NOT NULL,
   `total_price` decimal(10,0) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `studio-sessions-fk-user-id_idx` (`fk_user_id`),
   CONSTRAINT `studio-sessions-fk-user-id` FOREIGN KEY (`fk_user_id`) REFERENCES `users` (`iduser`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +141,7 @@ CREATE TABLE `studio_sessions` (
 
 LOCK TABLES `studio_sessions` WRITE;
 /*!40000 ALTER TABLE `studio_sessions` DISABLE KEYS */;
-INSERT INTO `studio_sessions` VALUES (1,1,'2019-04-22 02:27:45',50),(2,1,'2019-04-23 02:27:45',50),(3,1,'2019-04-24 02:27:45',50),(4,1,'2019-04-25 02:27:45',50);
+INSERT INTO `studio_sessions` VALUES (1,1,'2019-04-22 02:27:45',50),(2,1,'2019-04-23 02:27:45',50),(3,1,'2019-04-24 02:27:45',50),(4,1,'2019-04-25 02:27:45',50),(6,1,'2019-04-26 02:27:45',50),(7,1,'2019-04-26 02:27:45',50),(8,1,'2019-04-26 02:27:45',50),(9,1,'2019-04-26 02:27:45',88),(11,1,'2019-04-26 02:27:45',88),(12,1,'2019-04-26 02:27:45',88),(14,1,'2019-04-26 02:27:45',88),(15,1,'2019-04-26 02:27:45',88),(16,1,'2019-04-26 02:27:45',88),(17,1,'2019-04-26 02:27:45',88),(18,1,'2019-04-26 02:27:45',88),(19,1,'2019-04-26 02:27:45',88),(20,1,'2019-04-26 02:27:45',88),(21,1,'2019-04-26 02:27:45',88),(22,1,'2019-04-26 02:27:45',88),(23,1,'2019-04-26 02:27:45',88),(24,1,'2019-04-26 02:27:45',88),(25,1,'2019-04-26 02:27:45',88),(26,1,'2019-04-26 02:27:45',50),(27,1,'2019-04-26 02:27:45',50),(28,1,'2019-04-26 02:27:45',50);
 /*!40000 ALTER TABLE `studio_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,4 +216,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-05 22:44:00
+-- Dump completed on 2019-05-06  2:39:31
