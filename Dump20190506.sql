@@ -66,6 +66,7 @@ CREATE TABLE `gear_provided` (
 
 LOCK TABLES `gear_provided` WRITE;
 /*!40000 ALTER TABLE `gear_provided` DISABLE KEYS */;
+INSERT INTO `gear_provided` VALUES (1,'Big Softbox','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ducimus iusto?','http://lorempixel.com/400/600/people/'),(2,'Small Softbox','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ','http://lorempixel.com/400/600/people/'),(3,'Beauty Ring','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ducimus iusto?','http://lorempixel.com/400/600/people/'),(4,'Ice Light','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio ','http://lorempixel.com/400/600/people/'),(5,'High Power Fan','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ','http://lorempixel.com/400/600/people/');
 /*!40000 ALTER TABLE `gear_provided` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +105,7 @@ DROP TABLE IF EXISTS `session_gear`;
 CREATE TABLE `session_gear` (
   `fk_gear_id` int(11) NOT NULL,
   `fk_session_id` int(11) NOT NULL,
-  PRIMARY KEY (`fk_gear_id`,`fk_session_id`)
+  PRIMARY KEY (`fk_session_id`,`fk_gear_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -216,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-06 23:42:34
+-- Dump completed on 2019-05-07  1:44:10
