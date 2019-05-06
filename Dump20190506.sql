@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `extra_gear`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `extra_gear` (
   `idextra_gear` int(11) NOT NULL AUTO_INCREMENT,
-  `price` decimal(10,0) NOT NULL,
+  `price` double NOT NULL,
   `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `piclink` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`idextra_gear`)
@@ -66,7 +66,7 @@ CREATE TABLE `gear_provided` (
 
 LOCK TABLES `gear_provided` WRITE;
 /*!40000 ALTER TABLE `gear_provided` DISABLE KEYS */;
-INSERT INTO `gear_provided` VALUES (1,'Big Softbox','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ducimus iusto?','http://lorempixel.com/400/600/people/'),(2,'Small Softbox','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ','http://lorempixel.com/400/600/people/'),(3,'Beauty Ring','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ducimus iusto?','http://lorempixel.com/400/600/people/'),(4,'Ice Light','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio ','http://lorempixel.com/400/600/people/'),(5,'High Power Fan','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ','http://lorempixel.com/400/600/people/');
+INSERT INTO `gear_provided` VALUES (1,'Big Softbox','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ducimus iusto?','http://lorempixel.com/400/400/people/'),(2,'Small Softbox','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ','http://lorempixel.com/400/400/people/'),(3,'Beauty Ring','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ducimus iusto?','http://lorempixel.com/400/400/people/'),(4,'Ice Light','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio ','http://lorempixel.com/400/400/people/'),(5,'High Power Fan','Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia libero earum ex quae inventore facilis sunt optio error ','http://lorempixel.com/400/400/people/');
 /*!40000 ALTER TABLE `gear_provided` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,7 +129,7 @@ CREATE TABLE `studio_sessions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fk_user_id` int(11) NOT NULL,
   `date` datetime NOT NULL,
-  `total_price` decimal(10,0) NOT NULL,
+  `total_price` double NOT NULL,
   PRIMARY KEY (`id`),
   KEY `studio-sessions-fk-user-id_idx` (`fk_user_id`),
   CONSTRAINT `studio-sessions-fk-user-id` FOREIGN KEY (`fk_user_id`) REFERENCES `users` (`iduser`)
@@ -217,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-07  1:44:10
+-- Dump completed on 2019-05-07  2:26:29
