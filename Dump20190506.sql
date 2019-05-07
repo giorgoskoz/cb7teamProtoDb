@@ -160,7 +160,7 @@ CREATE TABLE `token` (
   PRIMARY KEY (`idtoken`),
   KEY `token-fk-user-id_idx` (`fk_user_id`),
   CONSTRAINT `token-fk-user-id` FOREIGN KEY (`fk_user_id`) REFERENCES `users` (`iduser`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -169,7 +169,7 @@ CREATE TABLE `token` (
 
 LOCK TABLES `token` WRITE;
 /*!40000 ALTER TABLE `token` DISABLE KEYS */;
-INSERT INTO `token` VALUES (1,1,'d300b803-4a82-43e1-ba86-5337f65d1ef9');
+INSERT INTO `token` VALUES (1,1,'d300b803-4a82-43e1-ba86-5337f65d1ef9'),(2,4,'6b9e903b-885f-43f6-9be9-2c0488701283'),(3,4,'5a33a81c-9a75-4c87-8172-59ba2e40463b'),(4,4,'42d2d02f-5b5d-4aa3-825e-d0122cc60a3a'),(5,4,'0a435a7f-349a-4fe6-8f4e-4cd1f842953d'),(6,4,'e461bcc4-256d-4afe-98e7-f509eb1704d8'),(7,4,'d371eb25-0c80-4dfa-8a30-5aeb581ad67e'),(8,4,'28318d9a-3b91-46c2-b027-5937eb2ba6aa'),(9,4,'842bd262-3e58-4829-8b0b-e31fda1bcdf2'),(10,4,'bd8919e7-d3e7-4fee-ab69-cd838cb529ec'),(11,4,'8fe36075-a943-4e46-beb4-9274fcc8b6be'),(12,4,'f95cff59-f48b-430d-bb61-3a9c619143ba'),(13,4,'0e5bd59f-621d-454e-a136-f65ff995a81f');
 /*!40000 ALTER TABLE `token` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -195,7 +195,7 @@ CREATE TABLE `users` (
   UNIQUE KEY `username_UNIQUE` (`username`),
   KEY `users-fk-role-id_idx` (`fk_role_id`),
   CONSTRAINT `users-fk-role-id` FOREIGN KEY (`fk_role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,7 +204,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'mike','5fbc0593bbd308e84fbaa9df247047fd833bae95c707ee60232eba8697f071e9','lllllll','kkkkkkk','theobrrrrrrr1988@hotmail.com','kjjkhvj',1,'43eefe93-02ca-4c86-adef-f7986ff612c1'),(2,'mike2','690042258d4260ff65c07e6c048d2483789f841b5ee78d0868738c43e7d62638','lllllll','kkkkkkk','brrrrrrr1988@hotmail.com','kjjkhvj',1,'d7eb3048-9942-4283-8385-d7a563ec0371'),(3,'mike23','ad28610430eeaf9b43235d0a940c2a0cc43a054fc1f025e44739415d87aa00d0','lllllll','kkkkkkk','rrrrr1988@hotmail.com','kjjkhvj',1,'59c56b54-2cae-4bcf-805e-bc40ef0dd8cc');
+INSERT INTO `users` VALUES (1,'mike','5fbc0593bbd308e84fbaa9df247047fd833bae95c707ee60232eba8697f071e9','lllllll','kkkkkkk','theobrrrrrrr1988@hotmail.com','kjjkhvj',1,'43eefe93-02ca-4c86-adef-f7986ff612c1'),(2,'mike2','690042258d4260ff65c07e6c048d2483789f841b5ee78d0868738c43e7d62638','lllllll','kkkkkkk','brrrrrrr1988@hotmail.com','kjjkhvj',1,'d7eb3048-9942-4283-8385-d7a563ec0371'),(3,'mike23','ad28610430eeaf9b43235d0a940c2a0cc43a054fc1f025e44739415d87aa00d0','lllllll','kkkkkkk','rrrrr1988@hotmail.com','kjjkhvj',1,'59c56b54-2cae-4bcf-805e-bc40ef0dd8cc'),(4,'admin','c91c919e286b8dca820efed08c44f25697b53d9585ad651f60e82664d80a5bef','Admin','Istrator','email@here.com','Istrator',2,'02a02d29-7662-497a-997d-39d8967b43b8');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -217,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-07  2:26:29
+-- Dump completed on 2019-05-08  0:58:48
