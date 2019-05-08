@@ -29,7 +29,7 @@ CREATE TABLE `extra_gear` (
   `price` double NOT NULL,
   `description` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `piclink` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `name` varchar(255) COLLATE utf8_bin NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`idextra_gear`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +40,7 @@ CREATE TABLE `extra_gear` (
 
 LOCK TABLES `extra_gear` WRITE;
 /*!40000 ALTER TABLE `extra_gear` DISABLE KEYS */;
-INSERT INTO `extra_gear` VALUES (1,10,'vsgjc','jskgdfugril',''),(2,15,'vsgxxjc','jskgdfccugril',''),(3,13,'vsgjc','jskgdfugril','');
+INSERT INTO `extra_gear` VALUES (1,10,'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, iure eum. Enim magnam quasi nisi soluta laudantium autem.','http://lorempixel.com/400/400/people/','Sony A7III'),(2,15,'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, iure eum. Enim magnam quasi nisi soluta','http://lorempixel.com/400/400/people/','Nikon d750'),(3,13,' laudantium autem. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, iure eum. Enim magnam quasi nisi soluta laudantium autem.','http://lorempixel.com/400/400/people/','Sony A7II');
 /*!40000 ALTER TABLE `extra_gear` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -217,4 +217,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-08 23:28:53
+-- Dump completed on 2019-05-09  1:08:05
